@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zomato Food Expense Tracker</title>
+  <style>
+    body {
+      width: 280px;
+      padding: 16px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      background-color: #F8F9FA;
+      color: #1C1C1C;
+      text-align: center;
+    }
+    .hero {
+      margin-bottom: 20px;
+    }
+    .hero img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #E23744;
+    }
+    p {
+      color: #6C757D;
+      font-size: 0.85rem;
+      margin: 0 0 20px 0;
+      line-height: 1.4;
+    }
+    .btn {
+      display: inline-block;
+      width: 100%;
+      padding: 12px;
+      background-color: #E23744;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(226, 55, 68, 0.3);
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+    .btn:hover {
+      background-color: #cb202d;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <img src="assets/icon128.png" alt="Zomato Icon">
+    <h2>Zomato Tracker</h2>
+    <p>View your lifetime food expenses, top restaurants, timeline, and more.</p>
+  </div>
+  <button id="open-dashboard" class="btn">Open Full Dashboard</button>
+  <script src="popup.js"></script>
+</body>
+</html>

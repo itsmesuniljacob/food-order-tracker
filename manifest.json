@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Zomato Food Expense Tracker",
+  "version": "1.0",
+  "description": "Calculate your lifetime spending on Zomato and view a beautiful dashboard with key statistics.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.zomato.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "assets/icon128.png"
+    },
+    "default_title": "Zomato Food Expense Tracker"
+  },
+  "icons": {
+    "128": "assets/icon128.png"
+  }
+}

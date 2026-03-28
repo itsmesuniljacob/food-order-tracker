@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Zomato Food Expense Tracker</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="brand">
+      <img src="assets/icon128.png" alt="Zomato Tracker Logo" class="logo">
+      <h1>Food Order Tracker</h1>
+    </div>
+    <div class="controls">
+      <button id="fetch-btn" class="primary-btn">Fetch Data</button>
+      <button id="clear-btn" class="secondary-btn">Clear Cache</button>
+    </div>
+    <div class="status-box">
+      <p id="status-text">Ready to fetch</p>
+      <div class="progress-bar-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <h2>Dashboard Overview</h2>
+      <p>Your lifetime Zomato statistics</p>
+    </div>
+
+    <div class="filters-row">
+      <div class="filter-group">
+        <button class="filter-btn active" data-range="all">All Time</button>
+        <button class="filter-btn" data-range="30d">30 Days</button>
+        <button class="filter-btn" data-range="3m">3 Months</button>
+        <button class="filter-btn" data-range="1y">1 Year</button>
+      </div>
+      <div class="filter-group custom-date">
+        <input type="date" id="custom-start-date" class="date-input">
+        <span class="date-sep">to</span>
+        <input type="date" id="custom-end-date" class="date-input">
+        <button id="apply-custom-date" class="filter-btn primary-btn"
+          style="padding: 6px 12px; font-size: 0.8rem;">Apply</button>
+      </div>
+    </div>
+
+    <!-- Error/Login Prompt -->
+    <div id="auth-error" class="hidden alert">
+      <p>Authentication Error: Please <a href="https://www.zomato.com" target="_blank">log in to Zomato.com</a>, then
+        try fetching again.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Total Spend</h3>
+        <p id="total-spend" class="stat-value">₹ 0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Total Orders</h3>
+        <p id="total-orders" class="stat-value">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Avg Order Value</h3>
+        <p id="avg-order-value" class="stat-value">₹ 0</p>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card flex-2">
+        <h3>Monthly Spend</h3>
+        <div style="position: relative; height: 300px; width: 100%;">
+          <canvas id="monthly-chart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card flex-1">
+        <h3>Region Wise Orders</h3>
+        <div style="position: relative; height: 300px; width: 100%;">
+          <canvas id="region-chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card flex-1">
+        <h3>Order Time Analysis</h3>
+        <div style="position: relative; height: 300px; width: 100%;">
+          <canvas id="time-chart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card flex-1">
+        <h3>Top 10 Restaurants</h3>
+        <div class="table-container">
+          <table id="top-restaurants-table">
+            <thead>
+              <tr>
+                <th>Restaurant</th>
+                <th>Spend</th>
+                <th>Orders</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="lib/chart.umd.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+
+</html>
